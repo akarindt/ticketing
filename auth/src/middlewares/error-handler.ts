@@ -13,6 +13,6 @@ export const errorHandler = (err: Error, req: Request, res: Response, next: Next
         return;
     }
 
-    res.status(400).send({ errors: [{ message: 'Something went wrong', field: undefined }] });
+    res.status(400).send({ errors: [{ message: err.message, field: undefined }] });
     return;
 };
